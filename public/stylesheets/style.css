@@ -1,8 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  line-height: 1.8;
+  color: #818181;
 }
 
 a {
   color: #00B7FF;
+}
+h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+}  
+.jumbotron {
+    background-color: #336e7b;
+    color: #fff;
+    padding: 100px 25px;
+    /*font-family: Montserrat, sans-serif;*/
+    min-height: 700px;
+    margin-bottom: -30px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background: #22313f !important;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 1px;
+    border-radius: 0;
+    font-family: "Roboto", sans-serif;
+}
+nav .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a,
+.navbar-nav li a:hover .glyphicon {
+    color: #81cfe0 !important;
+    background-color: rgba(0,0,0,.4) !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+
+
+footer {
+  background: #22313f;
+  min-height: 50px
+}
+footer p {
+  color: #ecf0f1;
+  text-align: center;
+  padding: 15px;
+  font-size: x-small;
 }
