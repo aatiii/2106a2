@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 /* GET register */
 router.get('/register', function(req, res, next) {
   res.render('register', {
-    title: 'Please Register'
+    title: 'Register'
   });
 });
 
@@ -19,7 +19,7 @@ router.get('/register', function(req, res, next) {
 router.get('/login', function(req, res, next) {
 
   res.render('login', {
-    title: 'Please Login'
+    title: 'Login'
   });
 });
 
