@@ -3,6 +3,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   line-height: 1.8;
   color: #818181;
+  background: #336e7b;
 }
 
 a {
@@ -158,4 +159,63 @@ footer p {
 .forgot-password:focus{
     color: #336e7b;
     text-decoration: none;
+}
+
+/*ads index*/
+.container.ads {
+    min-height: 650px;
+    background: #fcfcfc;
+    padding: 20px 60px;
+}
+.table.ads{
+    margin:20px 0px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.2s ease-in-out;
+    padding:20px;
+}    
+
+#custom-search-input{
+    padding: 0px;
+    border: solid 1px #E4E4E4;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+    padding-bottom: 0;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+    cursor: pointer;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 21px;
+}
+
+.container.ads .post {
+    background: #fff;
+    border: 1px solid #f2f2f2;
+    border-radius: 3px;
+    color: #336e7b;
+    cursor: pointer;
+}
+.btn-sm {
+    height: 26px;
+    line-height: 1.2;
 }

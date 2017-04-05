@@ -1,7 +1,55 @@
 <% include ../partials/header.ejs %>
 
 
-  <h1>Ads list</h1> 
+<div class="container ads">
+    <h2 class="text-center">Ad List</h2>
+    <div class="row">
+      <div class="col-md-5">
+
+      </div>
+      
+        <div class="col-md-5">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control " placeholder="Search..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-sm" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+      <div class="col-md-2">
+        <a href="/ads/add" class="btn btn-default btn-block post">Post a new Ad</a>
+      </div>
+	</div>
+		<div class="table-responsive">          
+      <table class="table table-bordered table-hover ads">
+        <thead>
+          <tr>            
+            <th>Title</th>
+            <th>Description</th>
+            <th style="width:100px">Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% for (var i=0; i<ads.length; i++) { %>
+          <tr>            
+            <td><%= ads[i].title %></td>
+            <td><%= ads[i].discription %></td>
+            <td><%= ads[i].price %></td>
+            <td>
+              <a href="/ads/<%= ads[i]._id %>" class="btn btn-info btn-sm">Edit</a>
+              <a href="/ads/delete/<%= ads[i]._id %>" class="btn btn-danger btn-sm confirmation">Delete</a>
+            </td>
+          </tr>
+        <% } %>
+        </tbody>
+      </table>
+    </div>
+</div>
 
 
 <% include ../partials/footer.ejs %>

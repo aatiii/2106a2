@@ -2,13 +2,15 @@ let mongoose = require('mongoose');
 
 let adSchema = new mongoose.Schema({
     title: {
-        type: String
+        type: String,
+        required: 'Title is required'
     },
-    description: {
+    discription: {
         type: String
     },
     price: {
-        type: String
+        type: String,
+        required: 'Price is Required'
     }
 });
 

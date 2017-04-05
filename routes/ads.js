@@ -15,7 +15,8 @@ router.get('/', function(req, res, next) {
       }
       res.render('ads/index', { 
           ads: ads,
-            title: 'Ads List'
+            title: 'Ads List',
+            user: req.user
       });
   });    
 });
