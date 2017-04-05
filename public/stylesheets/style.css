@@ -219,3 +219,7 @@ footer p {
     height: 26px;
     line-height: 1.2;
 }
+
+.container.ads.add {
+    width: 60%;
+}

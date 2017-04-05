@@ -5,6 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// passport dependencies
+let passport = require('passport');
+let session = require('express-session');
+let localStrategy = require('passport-local').Strategy;
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var ads = require('./routes/ads');
@@ -33,6 +38,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// passport config BEFORE controller references
+app.use(session({
+  secret: 'some string value here',
+    resave: true,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// use the Account model to manage users
+let Account = require('./models/account');
+
+// read / write user login info to mongodb
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
 
 app.use('/', index);
 app.use('/users', users);
