@@ -113,8 +113,8 @@ footer p {
     min-height: 1em;
 }
 
-.form-signin #inputEmail,
-.form-signin #inputPassword,
+.form-signin #username,
+.form-signin #password,
 .form-signin #inputConfirm {
     direction: ltr;
     height: 44px;

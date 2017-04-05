@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 let plm = require('passport-local-mongoose');
 let findOrCreate = require('mongoose-findorcreate');
 
-// create the model schema.  username and password are included automatically
+// create the model schema
 let accountSchema = new mongoose.Schema({
     googleId: String
 });

@@ -6,7 +6,7 @@ module.exports = {
     google: {
      clientID: '266250372156-2bfjms5smb8si6p9eobhupp00eeieoev.apps.googleusercontent.com',
      clientSecret: '-5JVVbVsZrKWBfvhLnlcLGeg',
-     callbackURL: 'http://localhost:3000/google/callback'
-     // callbackURL: 'https://comp2106a2-hailun.herokuapp.com/'
+     //callbackURL: 'http://localhost:3000/google/callback'
+     callbackURL: 'https://comp2106a2-hailun.herokuapp.com/'
    }
 };
