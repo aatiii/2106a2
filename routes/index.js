@@ -41,4 +41,33 @@ router.post('/register', function(req, res, next) {
   });
 });
 
+/* POST login */
+router.post('/login', passport.authenticate('local', {
+  successRedirect: '/ads',
+    failureRedirect: '/login',
+    failureMessage: 'Invalid Login'
+}));
+
+/* GET logout */
+router.get('/logout', function(req, res, next) {
+  req.logout();
+  res.redirect('/');
+});
+
+
+/* GET /google - show google login prompt */
+router.get('/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+/* GET /google/callback  */
+router.get('/google/callback', 
+  passport.authenticate('google', { 
+    failureRedirect: '/login',
+    scope: 'email' 
+  }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/ads');
+  });
+
 module.exports = router;

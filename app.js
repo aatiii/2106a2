@@ -51,6 +51,26 @@ app.use(passport.session());
 
 // use the Account model to manage users
 let Account = require('./models/account');
+passport.use(Account.createStrategy());
+
+// google auth
+var GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.use(new GoogleStrategy({
+    clientID: config.google.clientID,
+    clientSecret: config.google.clientSecret,
+    callbackURL: config.google.callbackURL,
+    profileFields: ['id', 'emails']
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    Account.findOrCreate({ 
+      googleId: profile.id,
+      username: profile.emails[0].value
+    }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
 
 // read / write user login info to mongodb
 passport.serializeUser(Account.serializeUser());

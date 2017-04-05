@@ -20,10 +20,18 @@
             </a></li>
             <li><a href="/ads">Ads</a></li>
         </ul>
+        <% if (user == undefined) { %>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/register">Register</a></li>
             <li><a href="/login">Login</a></li>
         </ul>
+         <% }
+        else { %>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+        
+        <% } %>
     </div>
 
 </nav>

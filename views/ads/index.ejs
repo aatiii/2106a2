@@ -7,7 +7,11 @@
       <div class="col-md-5">
 
       </div>
-      
+      <% if (user) { %>
+      <div class="col-md-2">
+        <a href="/ads/add" class="btn btn-default btn-block post">Post a new Ad</a>
+      </div>
+      <% } %>
         <div class="col-md-5">
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
@@ -20,9 +24,7 @@
                 </div>
             </div>
         </div>
-      <div class="col-md-2">
-        <a href="/ads/add" class="btn btn-default btn-block post">Post a new Ad</a>
-      </div>
+      
 	</div>
 		<div class="table-responsive">          
       <table class="table table-bordered table-hover ads">
@@ -31,7 +33,9 @@
             <th>Title</th>
             <th>Description</th>
             <th style="width:100px">Price</th>
-            <th>Action</th>
+            <% if (user) { %>
+            <th style="width:130px">Action</th>
+            <% } %>
           </tr>
         </thead>
         <tbody>
@@ -40,10 +44,12 @@
             <td><%= ads[i].title %></td>
             <td><%= ads[i].description %></td>
             <td><%= ads[i].price %></td>
+            <% if (user) { %>
             <td>
               <a href="/ads/<%= ads[i]._id %>" class="btn btn-info btn-sm">Edit</a>
               <a href="/ads/delete/<%= ads[i]._id %>" class="btn btn-danger btn-sm confirmation">Delete</a>
             </td>
+            <% } %>
           </tr>
         <% } %>
         </tbody>
